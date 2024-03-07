@@ -1,0 +1,140 @@
+* {
+  margin: unset;
+  padding: unset;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes text-gradient {
+  0% {
+    background-position: 0% 75%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 75%;
+  }
+}
+@keyframes text-gradient {
+  0% {
+    background-position: 0% 75%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 75%;
+  }
+}
+
+p:not(.smiley > p) {
+  background: -o-linear-gradient(200deg, #ff055e, #b000b5, #11ccee);
+  background: linear-gradient(250deg, #ff055e, #b000b5, #11ccee);
+  background-size: 500% 500%;
+
+  -webkit-animation: text-gradient 28s ease infinite;
+  animation: text-gradient 28s ease infinite;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: #0000;
+}
+
+.container {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.smiley {
+  position: relative;
+  margin-left: 18px;
+  margin-right: 15px;
+  -webkit-animation: rotate 5s linear -0.5s infinite;
+  animation: rotate 5s linear -0.5s infinite;
+  display: inline-block;
+}
+
+.smiley p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: change 15s linear infinite;
+  transform: translate(-50%, -55%);
+}
+
+.smiley p:nth-child(1) {
+  visibility: hidden;
+  animation-delay: 0s;
+}
+
+.smiley p:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.smiley p:nth-child(3) {
+  visibility: hidden;
+  animation-delay: 10s;
+}
+
+@keyframes change {
+  0%,
+  33% {
+    visibility: hidden;
+  }
+  33.1%,
+  66% {
+    visibility: visible;
+  }
+  66.1%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  p {
+    -webkit-animation: none;
+    animation: none;
+  }
+  .smiley {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
