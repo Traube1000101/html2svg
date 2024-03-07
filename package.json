@@ -1,0 +1,17 @@
+{
+  "name": "html2svg",
+  "version": "1.0.0",
+  "description": "bundles html &amp; (s)css into a svg file",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^3.6.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.71.1"
+  }
+}
